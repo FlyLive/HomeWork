@@ -97,7 +97,7 @@ public class Client extends JFrame implements ActionListener {
 	public String getClientName(){
 		return this.clientName;
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

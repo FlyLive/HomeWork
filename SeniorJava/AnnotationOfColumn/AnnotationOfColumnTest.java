@@ -15,33 +15,33 @@ public class AnnotationOfColumnTest {
 		Scanner scanner = new Scanner(System.in);
 
 		do {
-			System.out.println("Çë¸ù¾İÌáÊ¾ÊäÈë(1~3)ÕûÊı:");
-			System.out.println("1¡¢Ìí¼ÓÈËÔ±ĞÅÏ¢\n2¡¢É¾³ı\n3¡¢ĞŞ¸ÄÈËÔ±ĞÅÏ¢\n4¡¢²éÑ¯\n5¡¢ÍË³ö");
+			System.out.println("è¯·æ ¹æ®æç¤ºè¾“å…¥(1~3)æ•´æ•°:");
+			System.out.println("1ã€æ·»åŠ äººå‘˜ä¿¡æ¯\n2ã€åˆ é™¤\n3ã€ä¿®æ”¹äººå‘˜ä¿¡æ¯\n4ã€æŸ¥è¯¢\n5ã€é€€å‡º");
 			try {
 				int num = scanner.nextInt();
 				switch (num) {
-				case 1:
-					add();
-					break;
-				case 2:
-					delet();
-					break;
-				case 3:
-					modify();
-					break;
-				case 4:
-					check();
-					break;
-				case 5:
-					System.exit(0);
-					scanner.close();
-					break;
-				default:
-					System.out.println("ÊäÈëÓĞÎó£¬ÇëÖØÊÔ");
-					break;
+					case 1:
+						add();
+						break;
+					case 2:
+						delet();
+						break;
+					case 3:
+						modify();
+						break;
+					case 4:
+						check();
+						break;
+					case 5:
+						System.exit(0);
+						scanner.close();
+						break;
+					default:
+						System.out.println("è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡è¯•");
+						break;
 				}
 			} catch (Exception e) {
-				System.out.println("ÊäÈëÓĞÎó£¬ÒÑÍ£Ö¹" + e);
+				System.out.println("è¾“å…¥æœ‰è¯¯ï¼Œå·²åœæ­¢" + e);
 				scanner.close();
 				System.exit(0);
 			}
@@ -53,13 +53,13 @@ public class AnnotationOfColumnTest {
 		person = personInputOfColumn.process(person);
 		persons.add(person);
 
-		System.out.println("Ìí¼Ó³É¹¦");
+		System.out.println("æ·»åŠ æˆåŠŸ");
 	}
 
 	public static void delet() {
 		if (!isEmpty()) {
 			persons.remove(persons.size() - 1);
-			System.out.println("É¾³ı³É¹¦");
+			System.out.println("åˆ é™¤æˆåŠŸ");
 		}
 	}
 
@@ -67,7 +67,7 @@ public class AnnotationOfColumnTest {
 		if (!isEmpty()) {
 			Scanner scanner = new Scanner(System.in);
 			do {
-				System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄÈËÔ±µÄÏÂ±ê(1~" + persons.size() + "):");
+				System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„äººå‘˜çš„ä¸‹æ ‡(1~" + persons.size() + "):");
 
 				int index = 0;
 				try {
@@ -78,7 +78,7 @@ public class AnnotationOfColumnTest {
 					}
 					break;
 				} catch (Exception e) {
-					System.out.println("ÊäÈëÓĞÎó£¬ÇëÖØÊÔ");
+					System.out.println("è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡è¯•");
 				}
 			} while (true);
 		}
@@ -91,13 +91,13 @@ public class AnnotationOfColumnTest {
 				personDisplayOfColumn.process(person);
 				System.out.println("\n");
 			}
-			System.out.println("±éÀúÍê±Ï\n");
+			System.out.println("éå†å®Œæ¯•\n");
 		}
 	}
 
 	public static Boolean isEmpty() {
 		if (persons.size() == 0) {
-			System.out.println("ÉĞÎŞÂ¼ÈëÈËÔ±ĞÅÏ¢,ÇëÌí¼Ó");
+			System.out.println("å°šæ— å½•å…¥äººå‘˜ä¿¡æ¯,è¯·æ·»åŠ ");
 			return true;
 		}
 		return false;

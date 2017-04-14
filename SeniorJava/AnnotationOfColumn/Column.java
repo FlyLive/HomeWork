@@ -3,7 +3,7 @@ package AnnotationOfColumn;
 import java.lang.annotation.*;
 
 
-@Target({ElementType.FIELD})//Àà¡¢±äÁ¿¿ÉÒÔ±ê×¢
+@Target({ElementType.FIELD})//ç±»ã€å˜é‡å¯ä»¥æ ‡æ³¨
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Column {
 	public String value() default "";
@@ -12,5 +12,5 @@ public @interface Column {
 	public int minLength() default -1;
 	public int maxValue() default -1;
 	public int minValue() default -1;
-	
+
 }

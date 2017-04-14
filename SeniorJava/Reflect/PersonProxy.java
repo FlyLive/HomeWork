@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class PersonProxy implements IPerson {
 	private Person person;
-	private static final String path = "ÕÅĞ¡Æ½(PersonProxy).txt";
+	private static final String path = "å¼ å°å¹³(PersonProxy).txt";
 
 	public PersonProxy(Person person) {
 		this.person = person;
@@ -21,8 +21,8 @@ public class PersonProxy implements IPerson {
 		Date date = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
 		String now = dateFormat.format(date);
-		String info = "Ê±¼ä£º" + now + ";·½·¨Ãû³Æ£ºsetName;²ÎÊı£º" + name;
-		
+		String info = "æ—¶é—´ï¼š" + now + ";æ–¹æ³•åç§°ï¼šsetName;å‚æ•°ï¼š" + name;
+
 		outputToTxt(info);
 		System.out.println(info);
 	}
@@ -34,8 +34,8 @@ public class PersonProxy implements IPerson {
 		Date date = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
 		String now = dateFormat.format(date);
-		String info = "Ê±¼ä£º" + now + ";·½·¨Ãû³Æ£ºsetSex;²ÎÊı£º" + sex;
-		
+		String info = "æ—¶é—´ï¼š" + now + ";æ–¹æ³•åç§°ï¼šsetSex;å‚æ•°ï¼š" + sex;
+
 		outputToTxt(info);
 		System.out.println(info);
 	}
@@ -48,8 +48,8 @@ public class PersonProxy implements IPerson {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
 		String now = dateFormat.format(date);
 
-		String info = "Ê±¼ä£º" + now + ";·½·¨Ãû³Æ£ºsetAge;²ÎÊı£º" + age;
-		
+		String info = "æ—¶é—´ï¼š" + now + ";æ–¹æ³•åç§°ï¼šsetAge;å‚æ•°ï¼š" + age;
+
 		outputToTxt(info);
 		System.out.println(info);
 	}
@@ -61,8 +61,8 @@ public class PersonProxy implements IPerson {
 		Date date = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
 		String now = dateFormat.format(date);
-		String info = "Ê±¼ä£º" + now + ";·½·¨Ãû³Æ£ºsetIdNo;²ÎÊı£º" + idNo;
-		
+		String info = "æ—¶é—´ï¼š" + now + ";æ–¹æ³•åç§°ï¼šsetIdNo;å‚æ•°ï¼š" + idNo;
+
 		outputToTxt(info);
 		System.out.println(info);
 	}
@@ -74,12 +74,12 @@ public class PersonProxy implements IPerson {
 		Date date = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
 		String now = dateFormat.format(date);
-		String info = "Ê±¼ä£º" + now + ";·½·¨Ãû³Æ£ºsetIsMerried;²ÎÊı£º" + isMerried;
-		
+		String info = "æ—¶é—´ï¼š" + now + ";æ–¹æ³•åç§°ï¼šsetIsMerried;å‚æ•°ï¼š" + isMerried;
+
 		outputToTxt(info);
 		System.out.println(info);
 	}
-	
+
 	private void outputToTxt(String info){
 		try{
 			BufferedWriter bw=new BufferedWriter(new FileWriter(path,true));
@@ -115,7 +115,7 @@ public class PersonProxy implements IPerson {
 		Person person = new Person();
 		PersonProxy personProxy = new PersonProxy(person);
 
-		personProxy.setName("ÕÅĞ¡Æ½");
+		personProxy.setName("å¼ å°å¹³");
 		personProxy.setSex("Male");
 		personProxy.setAge(23);
 		personProxy.setIsMerried(true);

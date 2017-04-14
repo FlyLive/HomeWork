@@ -11,12 +11,12 @@ import javax.swing.*;
 public class Server extends JFrame implements ActionListener {
 	public static HashMap<String, Socket> clients = new HashMap<String, Socket>();
 	public ServerSocket server = null;
-	
-	private JLabel jlbMsg = new JLabel("·şÎñÆ÷");
+
+	private JLabel jlbMsg = new JLabel("æœåŠ¡å™¨");
 	private JTextField jtfrecive = new JTextField();
 	private JTextField jtfmsg = new JTextField();
-	private JTextArea jtaMsg = new JTextArea("ÏûÏ¢½ÓÊÕÆ÷\r\n");
-	private JButton jbt = new JButton("·¢ËÍ¸ø¿Í»§¶Ë");
+	private JTextArea jtaMsg = new JTextArea("æ¶ˆæ¯æ¥æ”¶å™¨\r\n");
+	private JButton jbt = new JButton("å‘é€ç»™å®¢æˆ·ç«¯");
 
 	public Server() {
 		// TODO Auto-generated constructor stub
@@ -37,7 +37,7 @@ public class Server extends JFrame implements ActionListener {
 				}
 			}
 		});
-		
+
 		jtfrecive.setColumns(20);
 		jtfmsg.setColumns(20);
 		jtaMsg.setAutoscrolls(true);
@@ -60,27 +60,27 @@ public class Server extends JFrame implements ActionListener {
 		if(e.getSource() == jbt){
 			String recive = jtfrecive.getText();
 			String send = jtfmsg.getText();
-			
+
 			if (recive.split(" ").equals("") && send.split(" ").equals("")) {
-				JOptionPane.showMessageDialog(null, "ÇëÊäÈëÒª´«ÊäÄÚÈİºÍ½ÓÊÕ·½");
+				JOptionPane.showMessageDialog(null, "è¯·è¾“å…¥è¦ä¼ è¾“å†…å®¹å’Œæ¥æ”¶æ–¹");
 			} else {
 				if(clients.containsKey(recive)){
-					String speak = "<message from=¡±¡±"
-							+ " to=¡±" + recive + "¡±" + "  message=¡±" + send
-							+ "¡±>";
+					String speak = "<message from=â€â€"
+							+ " to=â€" + recive + "â€" + "  message=â€" + send
+							+ "â€>";
 					PrintWriter writer;
 					try {
 						writer = new PrintWriter(clients.get(recive).getOutputStream());
 						writer.println(speak);
 						writer.flush();
-						jtaMsg.append("·şÎñÆ÷Ïò" + recive +"·¢ËÍĞÅÏ¢¡ª¡ª>" + send);
+						jtaMsg.append("æœåŠ¡å™¨å‘" + recive +"å‘é€ä¿¡æ¯â€”â€”>" + send);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
 				else{
-					jtaMsg.append("¸ÃÓÃ»§²»´æÔÚ\r\n");
+					jtaMsg.append("è¯¥ç”¨æˆ·ä¸å­˜åœ¨\r\n");
 				}
 			}
 		}
@@ -89,21 +89,21 @@ public class Server extends JFrame implements ActionListener {
 	public void init() {
 		try {
 			server = new ServerSocket(8888);
-			System.out.println("·şÎñÆ÷¶ËÒÑ¿ªÆô");
+			System.out.println("æœåŠ¡å™¨ç«¯å·²å¼€å¯");
 			while (true) {
 				Socket socket = server.accept();
 				new ServerThread(socket, this).start();
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("·şÎñÆ÷¶ËÒÑ¹Ø±Õ");
+			System.out.println("æœåŠ¡å™¨ç«¯å·²å…³é—­");
 		}
 	}
 
 	public void apppendMsg(String msg) {
 		this.jtaMsg.append(msg + "\r\n");
 	}
-	
+
 	public static void main(String[] args) {
 		new Server();
 	}

@@ -3,19 +3,19 @@ package AnnotationOfAll;
 import AnnotationOfLabel.Label;
 
 public class Person {
-	@Label("身份证号")
+	@Label("韬唤璇佸彿")
 	private int idNo;
-	
-	@Label("姓名")
+
+	@Label("濮撳悕")
 	private String name;
 
-	@Label("性别")
+	@Label("鎬у埆")
 	private String sex;
 
-	@Label("年龄")
+	@Label("骞撮緞")
 	private Integer age;
 
-	@Label("是否已婚")
+	@Label("鏄惁宸插")
 	private Boolean isMerried;
 
 	public String getName() {

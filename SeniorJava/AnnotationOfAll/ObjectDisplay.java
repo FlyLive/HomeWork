@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import AnnotationOfLabel.Label;
 
 public class ObjectDisplay {
-	// Êä³ö»ù±¾ĞÅÏ¢
+	// è¾“å‡ºåŸºæœ¬ä¿¡æ¯
 	public void displayInfo(ResultSet rs, Class<?> clazz) {
 		try {
 			while (rs.next()) {
@@ -32,7 +32,7 @@ public class ObjectDisplay {
 		}
 	}
 
-	// »ñÈ¡ËùÓĞÊôĞÔ
+	// è·å–æ‰€æœ‰å±æ€§
 	public Object[] getFields(Object obj, Class<?> clazz) {
 		Field[] fields = clazz.getDeclaredFields();
 		Method[] methods = clazz.getMethods();

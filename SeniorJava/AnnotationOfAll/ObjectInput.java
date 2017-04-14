@@ -8,7 +8,7 @@ import java.util.Scanner;
 import AnnotationOfLabel.Label;
 
 public class ObjectInput {
-	// Í¨¹ıÓ³ÉäµÄÀà¼°×¢½â´´½¨¶ÔÏó
+	// é€šè¿‡æ˜ å°„çš„ç±»åŠæ³¨è§£åˆ›å»ºå¯¹è±¡
 	public Object createObject(Class<?> clazz) {
 		Field[] fields = clazz.getDeclaredFields();
 		Object object = null;
@@ -25,7 +25,7 @@ public class ObjectInput {
 		return object;
 	}
 
-	// ÉèÖÃÊôĞÔ
+	// è®¾ç½®å±æ€§
 	public void setField(Field field, Class<?> clazz, Object obj)
 			throws IllegalAccessException, IllegalArgumentException,
 			InvocationTargetException {
@@ -42,7 +42,7 @@ public class ObjectInput {
 		}
 	}
 
-	// Í¨¹ıÓ³ÉäµÄÀà¼°×¢½âĞŞ¸Ä¶ÔÏó
+	// é€šè¿‡æ˜ å°„çš„ç±»åŠæ³¨è§£ä¿®æ”¹å¯¹è±¡
 	public Object modifyObject(Class<?> clazz) {
 		Field[] fields = clazz.getDeclaredFields();
 		Object obj = null;
@@ -61,13 +61,13 @@ public class ObjectInput {
 		return obj;
 	}
 
-	// »ñÈ¡×¢½âµÄÌáÊ¾
+	// è·å–æ³¨è§£çš„æç¤º
 	public void getPrompt(Field field) {
 		Label fieldLabel = field.getAnnotation(Label.class);
 		System.out.println(fieldLabel.value());
 	}
 
-	// »ñÈ¡¾­¹ıĞ£ÑéµÄÊäÈë
+	// è·å–ç»è¿‡æ ¡éªŒçš„è¾“å…¥
 	public Object getCheckedInput(String type) {
 		Scanner sc = new Scanner(System.in);
 		Object input = null;
@@ -81,7 +81,7 @@ public class ObjectInput {
 			} else if (type.equalsIgnoreCase("Boolean")) {
 				String temp = sc.nextLine();
 				if (!temp.equals("true") && !temp.equals("false")) {
-					System.out.println("ÀàĞÍ´íÎó,ÇëÖØÊÔ");
+					System.out.println("ç±»å‹é”™è¯¯,è¯·é‡è¯•");
 					input = getCheckedInput(type);
 				} else {
 					input = Boolean.valueOf(temp);
@@ -90,7 +90,7 @@ public class ObjectInput {
 				input = Double.valueOf(sc.nextLine());
 			}
 		} catch (Exception e) {
-			System.out.println("ÀàĞÍ´íÎó,ÇëÖØÊÔ");
+			System.out.println("ç±»å‹é”™è¯¯,è¯·é‡è¯•");
 			input = getCheckedInput(type);
 		}
 		return input;

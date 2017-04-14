@@ -9,7 +9,7 @@ public class ObjectEdit {
 	private static final ObjectInput objectInput = new ObjectInput();
 	private static final ObjectDisplay objectDisplay = new ObjectDisplay();
 
-	// ÏÔÊ¾±íËùÓĞĞÅÏ¢
+	// æ˜¾ç¤ºè¡¨æ‰€æœ‰ä¿¡æ¯
 	public void showAll(Class<?> clazz) {
 		String className = clazz.getSimpleName();
 		String sql = "select * from " + className;
@@ -18,30 +18,30 @@ public class ObjectEdit {
 		if (rs != null) {
 			objectDisplay.displayInfo(rs, clazz);
 		} else {
-			System.out.println("ÔİÎŞĞÅÏ¢£¬ÇëÌí¼Ó!");
+			System.out.println("æš‚æ— ä¿¡æ¯ï¼Œè¯·æ·»åŠ !");
 		}
 	}
 
-	// Ôö¼Ó
+	// å¢åŠ 
 	public void create(Class<?> clazz) {
-		// ÊäÈë³õÊ¼»¯
+		// è¾“å…¥åˆå§‹åŒ–
 		Object obj = objectInput.createObject(clazz);
 
 		Object[] fieldValues = objectDisplay.getFields(obj, clazz);
 
-		// Æ´½ÓÎªSQLÓïÑÔ
+		// æ‹¼æ¥ä¸ºSQLè¯­è¨€
 		String sql = CreateObjectSQLString(clazz, fieldValues);
 
-		// Ğ´ÈëÊı¾İ¿â
+		// å†™å…¥æ•°æ®åº“
 		int count = db.executeUpdateSQL(sql, fieldValues);
 		if (count > 0) {
-			System.out.println("Ìí¼Ó³É¹¦£¡");
+			System.out.println("æ·»åŠ æˆåŠŸï¼");
 		} else {
-			System.out.println("Ìí¼ÓÊ§°Ü£¡");
+			System.out.println("æ·»åŠ å¤±è´¥ï¼");
 		}
 	}
 
-	// Æ´½ÓÌí¼Ó¶ÔÏóSQLÓï¾ä
+	// æ‹¼æ¥æ·»åŠ å¯¹è±¡SQLè¯­å¥
 	public String CreateObjectSQLString(Class<?> clazz, Object[] fieldValues) {
 		String className = clazz.getSimpleName();
 		String sql = "insert into " + className + " values(";
@@ -56,30 +56,30 @@ public class ObjectEdit {
 		return sql;
 	}
 
-	// É¾³ı
+	// åˆ é™¤
 	public void delete(Class<?> clazz) {
 		String className = clazz.getSimpleName();
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("ÇëÊäÈë²éÕÒ¶ÔÏóµÄºÅÂë£º");
+		System.out.println("è¯·è¾“å…¥æŸ¥æ‰¾å¯¹è±¡çš„å·ç ï¼š");
 		int no = (int) objectInput.getCheckedInput("Integer");
 
 		String sql = "delete from " + className + " where idNo=?";
 		int count = db.executeUpdateSQL(sql, no);
 
 		if (count > 0) {
-			System.out.println("³É¹¦É¾³ıºÅÂëÎª " + no + " µÄ¶ÔÏó");
+			System.out.println("æˆåŠŸåˆ é™¤å·ç ä¸º " + no + " çš„å¯¹è±¡");
 		} else {
-			System.out.println("Î´ÕÒµ½IdÎª: " + no + " µÄ¶ÔÏó");
+			System.out.println("æœªæ‰¾åˆ°Idä¸º: " + no + " çš„å¯¹è±¡");
 		}
 	}
 
-	// ĞŞ¸Ä
+	// ä¿®æ”¹
 	public void update(Class<?> clazz) {
 		String className = clazz.getSimpleName();
-		// ĞŞ¸ÄÖµÁĞ±í
+		// ä¿®æ”¹å€¼åˆ—è¡¨
 
-		System.out.println("ÇëÊäÈëĞŞ¸Ä¶ÔÏóµÄID:");
+		System.out.println("è¯·è¾“å…¥ä¿®æ”¹å¯¹è±¡çš„ID:");
 		int idNo = (int) objectInput.getCheckedInput("Integer");
 
 		Object obj = objectInput.modifyObject(clazz);
@@ -87,7 +87,7 @@ public class ObjectEdit {
 		String sqlCenter = "";
 		Object[] fields = objectDisplay.getFields(obj, clazz);
 
-		// Æ´½Ó¸üĞÂ²¿·ÖSQLÓï¾ä
+		// æ‹¼æ¥æ›´æ–°éƒ¨åˆ†SQLè¯­å¥
 		int index = 0;
 		for (Field field : clazz.getDeclaredFields()) {
 			sqlCenter += field.getName() + "=?,";
@@ -102,23 +102,23 @@ public class ObjectEdit {
 		String sql = "update " + className + " set " + sqlCenter
 				+ " where idNo=" + idNo;
 
-		// ¶ÔÊı¾İ¿â½øĞĞ²Ù×÷
+		// å¯¹æ•°æ®åº“è¿›è¡Œæ“ä½œ
 		int count = db.executeUpdateSQL(sql, fields);
 		if (count > 0) {
-			System.out.println("³É¹¦ĞŞ¸ÄIDÎª: " + idNo + " µÄ¶ÔÏó");
+			System.out.println("æˆåŠŸä¿®æ”¹IDä¸º: " + idNo + " çš„å¯¹è±¡");
 		} else {
-			System.out.println("ĞŞ¸ÄÊ§°Ü!");
+			System.out.println("ä¿®æ”¹å¤±è´¥!");
 		}
 	}
 
-	// ²éÕÒ
+	// æŸ¥æ‰¾
 	public void select(Class<?> clazz) {
 		String className = clazz.getSimpleName();
 		Scanner input = new Scanner(System.in);
 		ResultSet rs = null;
 		String sql = "select * from " + className + " where idNo=?";
 
-		System.out.println("ÇëÊäÈë²éÕÒ¶ÔÏóµÄºÅÂë£º");
+		System.out.println("è¯·è¾“å…¥æŸ¥æ‰¾å¯¹è±¡çš„å·ç ï¼š");
 		int idNo = (int) objectInput.getCheckedInput("Integer");
 
 		rs = db.executeSelectSQL(sql, idNo);

@@ -13,76 +13,76 @@ public class TKClient {
 	private static Socket temp = null;
 	private static BufferedReader buffer_reader_temp = null;
 	private static PrintWriter writer_temp = null;
-	
+
 	public static void main(String[] args) throws Exception {
 		try {
 			temp = new Socket("127.0.0.1", 8888);
-			// ´Ó·şÎñÆ÷»ñÈ¡·şÎñÆ÷µÄÊäÈëÁ÷(¿Í»§¶Ë½ÓÊÕ)
+			// ä»æœåŠ¡å™¨è·å–æœåŠ¡å™¨çš„è¾“å…¥æµ(å®¢æˆ·ç«¯æ¥æ”¶)
 			buffer_reader_temp = new BufferedReader(new InputStreamReader(
 					temp.getInputStream()));
-			// ¿Í»§¶ËÊä³öÁ÷(¿Í»§¶Ë·¢ËÍ)
+			// å®¢æˆ·ç«¯è¾“å‡ºæµ(å®¢æˆ·ç«¯å‘é€)
 			writer_temp = new PrintWriter(temp.getOutputStream());
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
-			System.out.println("µØÖ·´íÎó");
+			System.out.println("åœ°å€é”™è¯¯");
 			System.exit(0);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			System.out.println("·şÎñÆ÷ÉĞÎ´´ò¿ª");
+			System.out.println("æœåŠ¡å™¨å°šæœªæ‰“å¼€");
 			System.exit(0);
 		}
-		// ÓÃ»§ÊäÈë
+		// ç”¨æˆ·è¾“å…¥
 		input = new Scanner(System.in);
 
-		boolean f = true;// Ñ­»·ÅĞ¶Ï
+		boolean f = true;// å¾ªç¯åˆ¤æ–­
 		int choice = 0;
 
 		while (f) {
-			System.out.print("ÇëÑ¡Ôñ:1.×¢²á  2.µÇÂ¼  3.ÍË³ö:");
+			System.out.print("è¯·é€‰æ‹©:1.æ³¨å†Œ  2.ç™»å½•  3.é€€å‡º:");
 			choice = input.nextInt();
 
 			switch (choice) {
-			case 1:
-				registe();// ×¢²á
-				break;
-			case 2:
-				login();// µÇÂ¼
-				break;
-			case 3:
-				f = false;
-				break;// ÍË³ö
-			default:
-				System.out.println("ÊäÈëÓĞÎó,ÇëÖØĞÂÊäÈë");
-				break;
+				case 1:
+					registe();// æ³¨å†Œ
+					break;
+				case 2:
+					login();// ç™»å½•
+					break;
+				case 3:
+					f = false;
+					break;// é€€å‡º
+				default:
+					System.out.println("è¾“å…¥æœ‰è¯¯,è¯·é‡æ–°è¾“å…¥");
+					break;
 			}
 		}
 	}
 
 	public static void registe() throws Exception {
-		System.out.print("×¢²áÃû:");
+		System.out.print("æ³¨å†Œå:");
 		String speak = input.next();
 
-		speak = "<register  name=¡±" + speak + "¡±/>";
+		speak = "<register  name=â€" + speak + "â€/>";
 		SendMessageToServer(speak);
 	}
 
 	public static void login() throws Exception {
-		System.out.print("µÇÂ¼Ãû:");
+		System.out.print("ç™»å½•å:");
 		String speak = input.next();
 
 		String clientName = speak;
-		speak = "<login  name=¡±" + clientName + "¡±/> ";
+		speak = "<login  name=â€" + clientName + "â€/> ";
 		String result = SendMessageToServer(speak);
-		if (result.startsWith("µÇÂ¼³É¹¦")) {
+		if (result.startsWith("ç™»å½•æˆåŠŸ")) {
 			new Client(clientName,temp);
 		}
 	}
 
 	public static String SendMessageToServer(String message) throws Exception {
-		 writer_temp.println(message);
-		 writer_temp.flush();
-		 String response = buffer_reader_temp.readLine();
-		 System.out.println("·şÎñÆ÷ÏìÓ¦:" + response);
+		writer_temp.println(message);
+		writer_temp.flush();
+		String response = buffer_reader_temp.readLine();
+		System.out.println("æœåŠ¡å™¨å“åº”:" + response);
 		return response;
 	}
 

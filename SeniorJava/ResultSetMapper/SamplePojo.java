@@ -35,10 +35,10 @@ public class SamplePojo {
 	public void setGender(boolean gender) {
 		this.gender = gender;
 	}
-	
+
 	@Override
 	public String toString() {
-		return 	"id: " + id + "\n" + 
+		return 	"id: " + id + "\n" +
 				"name: " + name + "\n"+
 				"address: " + address + "\n" +
 				"gender: " + (gender ? "Male" : "Female") + "\n\n";

@@ -2,26 +2,26 @@ package AnnotationOfLabel;
 
 import AnnotationOfColumn.Column;
 
-@Label("人类")
+@Label("浜虹被")
 public class Person {
-	@Label("姓名")
-	@Column(value = "姓名", maxLength = 10, minLength = 3)
+	@Label("濮撳悕")
+	@Column(value = "濮撳悕", maxLength = 10, minLength = 3)
 	private String name;
 
-	@Label("性别")
-	@Column(value = "性别")
+	@Label("鎬у埆")
+	@Column(value = "鎬у埆")
 	private String sex;
 
-	@Label("年龄")
-	@Column(value = "年龄", maxLength = 3, minLength = 1, minValue = 0)
+	@Label("骞撮緞")
+	@Column(value = "骞撮緞", maxLength = 3, minLength = 1, minValue = 0)
 	private Integer age;
 
-	@Label("身份证号")
-	@Column(value = "身份证号", maxLength = 18, minLength = 18)
+	@Label("韬唤璇佸彿")
+	@Column(value = "韬唤璇佸彿", maxLength = 18, minLength = 18)
 	private String idNo;
 
-	@Label("是否已婚")
-	@Column(value = "是否已婚",nullable=true, maxLength = 5, minLength = 4)
+	@Label("鏄惁宸插")
+	@Column(value = "鏄惁宸插",nullable=true, maxLength = 5, minLength = 4)
 	private Boolean isMerried;
 
 	public String getName() {

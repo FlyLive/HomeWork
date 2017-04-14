@@ -13,10 +13,10 @@ public class JDBCTest {
 			Class.forName(dbName);
 			Connection deConn = DriverManager.getConnection(dbUrl, userName,
 					password);
-			System.out.println("连接成功");
+			System.out.println("杩炴帴鎴愬姛");
 			deConn.close();
 		} catch (Exception e) {
-			System.out.println("连接失败");
+			System.out.println("杩炴帴澶辫触");
 		}
 	}
 
@@ -30,7 +30,7 @@ public class JDBCTest {
 			Class.forName(dbName);
 			deConn = DriverManager.getConnection(dbUrl, userName, password);
 		} catch (Exception e) {
-			System.out.println("连接失败");
+			System.out.println("杩炴帴澶辫触");
 		}
 		return deConn;
 	}

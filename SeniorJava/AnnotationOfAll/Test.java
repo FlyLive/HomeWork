@@ -1,43 +1,1 @@
-package AnnotationOfAll;
-
-import java.util.*;
-
-public class Test {
-	private static final Class<?> clazz = new Person().getClass();
-	
-	public static void main(String[] args) {
-		ObjectEdit objEdit = new ObjectEdit();
-
-		Scanner input = new Scanner(System.in);
-		int choice = 0;
-
-		while (true) {
-			System.out.println("ÇëÊäÈëÃüÁî:\n1¡¢ÏÔÊ¾ËùÓĞ¸Ã¶ÔÏóµÄĞÅÏ¢\n2¡¢ĞÂÔö\n3¡¢É¾³ı\n4¡¢ĞŞ¸Ä\n5¡¢²éÕÒ\n6¡¢ÍË³ö");
-			choice = input.nextInt();
-			switch (choice) {
-			case 1:
-				objEdit.showAll(clazz);
-				break;
-			case 2:
-				objEdit.create(clazz);
-				break;
-			case 3:
-				objEdit.delete(clazz);
-				break;
-			case 4:
-				objEdit.update(clazz);
-				break;
-			case 5:
-				objEdit.select(clazz);
-				break;
-			case 6:
-				input.close();
-				System.exit(0);
-				break;
-			default:
-				System.out.println("ÊäÈëÓĞÎó£¬ÇëÖØÊÔ");
-				break;
-			}
-		}
-	}
-}
+package AnnotationOfAll;import java.util.*;public class Test {	private static final Class<?> clazz = new Person().getClass();	public static void main(String[] args) {		ObjectEdit objEdit = new ObjectEdit();		Scanner input = new Scanner(System.in);		int choice = 0;		while (true) {			System.out.println("è¯·è¾“å…¥å‘½ä»¤:\n1ã€æ˜¾ç¤ºæ‰€æœ‰è¯¥å¯¹è±¡çš„ä¿¡æ¯\n2ã€æ–°å¢\n3ã€åˆ é™¤\n4ã€ä¿®æ”¹\n5ã€æŸ¥æ‰¾\n6ã€é€€å‡º");			choice = input.nextInt();			switch (choice) {				case 1:					objEdit.showAll(clazz);					break;				case 2:					objEdit.create(clazz);					break;				case 3:					objEdit.delete(clazz);					break;				case 4:					objEdit.update(clazz);					break;				case 5:					objEdit.select(clazz);					break;				case 6:					input.close();					System.exit(0);					break;				default:					System.out.println("è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡è¯•");					break;			}		}	}}

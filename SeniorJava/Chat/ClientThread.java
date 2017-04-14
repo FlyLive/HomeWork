@@ -25,13 +25,13 @@ public class ClientThread extends Thread {
 	public void run() {
 		// TODO Auto-generated method stub
 		super.run();
-		
-		System.out.println("¿Í»§¶Ë×ÓÏß³Ì" + this.getId() + "¿ªÊ¼¹¤×÷");
+
+		System.out.println("å®¢æˆ·ç«¯å­çº¿ç¨‹" + this.getId() + "å¼€å§‹å·¥ä½œ");
 		while (true) {
 			try {
 				if (socket.isClosed() == false) {
 					if (socket.isInputShutdown() == false) {
-						temp = "·şÎñÆ÷Ëµ¡ª¡ª>" + ":" + reader.readLine();
+						temp = "æœåŠ¡å™¨è¯´â€”â€”>" + ":" + reader.readLine();
 						client.appendMsg(temp);
 					}
 
@@ -44,7 +44,7 @@ public class ClientThread extends Thread {
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				System.out.println("·şÎñÆ÷ÒÑÍ£Ö¹¹¤×÷");
+				System.out.println("æœåŠ¡å™¨å·²åœæ­¢å·¥ä½œ");
 				System.exit(0);
 			}
 		}

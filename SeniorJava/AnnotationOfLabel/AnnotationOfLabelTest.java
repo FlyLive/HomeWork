@@ -5,33 +5,33 @@ import java.util.Scanner;
 public class AnnotationOfLabelTest {
 	private static final PersonDisplay personDisplay = new PersonDisplay();
 	private static final PersonInput personInput = new PersonInput();
-	
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Person person = null;
-		
+
 		do{
-			System.out.println("Çë¸ù¾İÌáÊ¾ÊäÈë(1~3)ÕûÊı:");
-			System.out.println("1¡¢ÊäÈëÈËÔ±ĞÅÏ¢¡£\n2¡¢²éÑ¯\n3¡¢ÍË³ö");
+			System.out.println("è¯·æ ¹æ®æç¤ºè¾“å…¥(1~3)æ•´æ•°:");
+			System.out.println("1ã€è¾“å…¥äººå‘˜ä¿¡æ¯ã€‚\n2ã€æŸ¥è¯¢\n3ã€é€€å‡º");
 			try {
 				int num = scanner.nextInt();
 				switch (num) {
-				case 1:
-					person = personInput.process(new Person());
-					break;
-				case 2:
-					personDisplay.process(person);
-					break;
-				case 3:
-					scanner.close();
-					System.exit(0);
-					break;
-				default:
-					System.out.println("ÊäÈëÓĞÎó£¬ÇëÖØÊÔ");
-					break;
+					case 1:
+						person = personInput.process(new Person());
+						break;
+					case 2:
+						personDisplay.process(person);
+						break;
+					case 3:
+						scanner.close();
+						System.exit(0);
+						break;
+					default:
+						System.out.println("è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡è¯•");
+						break;
 				}
 			} catch (Exception e) {
-				System.out.println("ÊäÈëÓĞÎó£¬ÒÑÍ£Ö¹");
+				System.out.println("è¾“å…¥æœ‰è¯¯ï¼Œå·²åœæ­¢");
 				scanner.close();
 				System.exit(0);
 			}

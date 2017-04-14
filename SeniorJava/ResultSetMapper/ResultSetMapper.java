@@ -37,7 +37,7 @@ public class ResultSetMapper<T> {
 										.getAnnotation(Label.class);
 								if (label.value().equalsIgnoreCase(columnName)
 										&& columnValue != null) {
-									
+
 //									BeanUtils.setProperty(bean,
 //											field.getName(), columnValue);
 									break;

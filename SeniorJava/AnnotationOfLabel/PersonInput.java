@@ -52,11 +52,11 @@ public class PersonInput implements IPersonAction {
 		Label fieldLabel = field.getAnnotation(Label.class);
 		System.out.println(fieldLabel.value());
 	}
-	
+
 	public Object getInput(String type) throws IOException {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		Object input = null;
-		
+
 		do{
 			if (type.equals("String")){
 				input = bf.readLine();
@@ -71,10 +71,10 @@ public class PersonInput implements IPersonAction {
 				break;
 			}
 			else {
-				System.out.print("ÀàĞÍ´íÎó,ÇëÖØĞÂÊäÈë:");
+				System.out.print("ç±»å‹é”™è¯¯,è¯·é‡æ–°è¾“å…¥:");
 			}
 		}while(true);
-		
+
 		return input;
 	}
 }

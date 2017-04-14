@@ -60,7 +60,7 @@ public class PersonInputOfColumn implements IPersonAction {
 				if (nullable) {
 					isCorrect = false;
 				} else {
-					System.out.println("ÊäÈëÖµ²»ÄÜÎª¿Õ£¬ÇëÖØĞÂÊäÈë¡£");
+					System.out.println("è¾“å…¥å€¼ä¸èƒ½ä¸ºç©ºï¼Œè¯·é‡æ–°è¾“å…¥ã€‚");
 					isCorrect = true;
 					continue;
 				}
@@ -75,7 +75,7 @@ public class PersonInputOfColumn implements IPersonAction {
 						isCorrect = false;
 					} else {
 						isCorrect = true;
-						System.out.println("ÊäÈëÖµ³¤¶ÈĞ¡ÓÚ×îĞ¡Öµ£¬ÇëÖØĞÂÊäÈë¡£");
+						System.out.println("è¾“å…¥å€¼é•¿åº¦å°äºæœ€å°å€¼ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚");
 						continue;
 					}
 				}
@@ -84,7 +84,7 @@ public class PersonInputOfColumn implements IPersonAction {
 						isCorrect = false;
 					} else {
 						isCorrect = true;
-						System.out.println("ÊäÈëÖµ³¤¶È´óÓÚ×î´óÖµ£¬ÇëÖØĞÂÊäÈë¡£");
+						System.out.println("è¾“å…¥å€¼é•¿åº¦å¤§äºæœ€å¤§å€¼ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚");
 						continue;
 					}
 				}
@@ -93,7 +93,7 @@ public class PersonInputOfColumn implements IPersonAction {
 						isCorrect = false;
 					} else {
 						isCorrect = true;
-						System.out.println("ÊäÈëÖµĞ¡ÓÚ×îĞ¡Öµ£¬ÇëÖØĞÂÊäÈë¡£");
+						System.out.println("è¾“å…¥å€¼å°äºæœ€å°å€¼ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚");
 						continue;
 					}
 				}
@@ -102,7 +102,7 @@ public class PersonInputOfColumn implements IPersonAction {
 						isCorrect = false;
 					} else {
 						isCorrect = true;
-						System.out.println("ÊäÈëÖµ´óÓÚ×î´óÖµ£¬ÇëÖØĞÂÊäÈë¡£");
+						System.out.println("è¾“å…¥å€¼å¤§äºæœ€å¤§å€¼ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚");
 						continue;
 					}
 				}
@@ -120,7 +120,7 @@ public class PersonInputOfColumn implements IPersonAction {
 			try{
 				input = Integer.valueOf(scanner.nextLine());
 			}catch(Exception e){
-				System.out.println("ÀàĞÍ´íÎó,ÇëÖØÊÔ");
+				System.out.println("ç±»å‹é”™è¯¯,è¯·é‡è¯•");
 				input = getCheckedInput(type);
 			}
 		} else if (type.equals("Boolean")) {

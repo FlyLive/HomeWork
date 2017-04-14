@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 
 public class PersonProxyDynamic implements InvocationHandler {
 	private Object proxied;
-	private static final String path = "’≈–°∆Ω(PersonProxy).txt";
+	private static final String path = "Âº†Â∞èÂπ≥(PersonProxy).txt";
 
 	public PersonProxyDynamic(Object proxied) {
 		this.proxied = proxied;
@@ -24,13 +24,13 @@ public class PersonProxyDynamic implements InvocationHandler {
 		String now = dateFormat.format(date);
 
 		method.invoke(this.proxied, args);
-		String info = " ±º‰£∫" + now + ";∑Ω∑®√˚≥∆£∫" + method.getName() + ";≤Œ ˝£∫" + args[0];
-		
+		String info = "Êó∂Èó¥Ôºö" + now + ";ÊñπÊ≥ïÂêçÁß∞Ôºö" + method.getName() + ";ÂèÇÊï∞Ôºö" + args[0];
+
 		outputToTxt(info);
 		System.out.println(info);
 		return null;
 	}
-	
+
 	private void outputToTxt(String info){
 		try{
 			BufferedWriter bw=new BufferedWriter(new FileWriter(path,true));
@@ -49,7 +49,7 @@ public class PersonProxyDynamic implements InvocationHandler {
 				new Class[] { IPerson.class }, new PersonProxyDynamic(
 						person));
 
-		personProxy.setName("’≈–°∆Ω");
+		personProxy.setName("Âº†Â∞èÂπ≥");
 		personProxy.setSex("Male");
 		personProxy.setAge(23);
 		personProxy.setIsMerried(true);

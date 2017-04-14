@@ -3,13 +3,13 @@ package AnnotationOfAll;
 import AnnotationOfLabel.Label;
 
 public class Animal {
-	@Label("编号")
+	@Label("缂栧彿")
 	private String idNo;
-	
-	@Label("名称")
+
+	@Label("鍚嶇О")
 	private String name;
 
-	@Label("种类")
+	@Label("绉嶇被")
 	private String type;
 
 	public String getIdNo() {

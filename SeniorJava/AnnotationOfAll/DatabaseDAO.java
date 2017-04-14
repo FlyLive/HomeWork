@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DatabaseDAO {
-	// »ñÈ¡Á¬½Ó
+	// è·å–è¿æ¥
 	public Connection getConnection() {
 		String dbName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 		String dbUrl = "jdbc:sqlserver://127.0.0.1:1433;DatabaseName=SeniorJava";
@@ -20,12 +20,12 @@ public class DatabaseDAO {
 			Class.forName(dbName);
 			deConn = DriverManager.getConnection(dbUrl, userName, password);
 		} catch (Exception e) {
-			System.out.println("Á¬½ÓÊ§°Ü");
+			System.out.println("è¿æ¥å¤±è´¥");
 		}
 		return deConn;
 	}
 
-	// SQL¸üĞÂ
+	// SQLæ›´æ–°
 	public int executeUpdateSQL(String sql, Object... args) {
 		PreparedStatement pstmt = null;
 		Connection conn = null;
@@ -39,7 +39,7 @@ public class DatabaseDAO {
 			counts = pstmt.executeUpdate();
 			return counts;
 		} catch (SQLException e) {
-			System.out.println("idNoÖØ¸´!");
+			System.out.println("idNoé‡å¤!");
 		} finally {
 			close(pstmt);
 			close(conn);
@@ -47,7 +47,7 @@ public class DatabaseDAO {
 		return 0;
 	}
 
-	// »ñÈ¡SQL²éÑ¯Óï¾äµÄ²éÑ¯½á¹û
+	// è·å–SQLæŸ¥è¯¢è¯­å¥çš„æŸ¥è¯¢ç»“æœ
 	public ResultSet executeSelectSQL(String sql, Object... args) {
 		PreparedStatement pstmt = null;
 		Connection conn = null;

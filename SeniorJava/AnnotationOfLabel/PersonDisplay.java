@@ -12,7 +12,7 @@ public class PersonDisplay implements IPersonAction {
 		getPrm(person,person.getClass());
 		return person;
 	}
-	
+
 	public void getPrm(Object obj,Class<?> clazz){
 		Field[] fields = clazz.getDeclaredFields();
 		Method[] methods = clazz.getMethods();
@@ -27,7 +27,7 @@ public class PersonDisplay implements IPersonAction {
 						getPrompt(fields[i]);
 
 						String info = (String)method.invoke(obj).toString();
-						
+
 						System.out.println(info);
 					}
 				}
